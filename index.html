@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macro Sensi Pro - Free Fire 🔥</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(45deg, #0a0a0a, #1f1f1f);
+      color: white;
+      animation: fondoAnimado 20s infinite alternate;
+    }
+    @keyframes fondoAnimado {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      color: red;
+      text-align: center;
+      text-shadow: 0 0 5px #ff0000;
+    }
+    .zona, .generador {
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    input, button, select {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+    }
+    .premium {
+      background-color: gold;
+      color: black;
+    }
+    .frase {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    .oni-mask {
+      width: 150px;
+      display: block;
+      margin: 10px auto;
+      filter: drop-shadow(0 0 10px red);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 Macro Sensi Pro 🔥</h1><div class="generador">
+  <label>Reconocimiento de Dispositivo:</label>
+  <select id="dispositivo">
+    <option value="Samsung A10">Samsung A10</option>
+    <option value="Motorola G7">Motorola G7</option>
+    <option value="Xiaomi Redmi 9">Xiaomi Redmi 9</option>
+    <option value="Otro">Otro</option>
+  </select>
+
+  <label>Selecciona tu arma:</label>
+  <select>
+    <option>MP40</option>
+    <option>M1014</option>
+    <option>Desert Eagle</option>
+    <option>M500</option>
+  </select>
+
+  <label>Botón de disparo (0-200):</label>
+  <input type="range" min="0" max="200">
+
+  <label>DPI:</label>
+  <input type="number" placeholder="Ej: 600">
+
+  <label>Modo de juego:</label>
+  <select>
+    <option>Clásico</option>
+    <option>Clasificatoria</option>
+    <option>Duelo de Escuadras</option>
+  </select>
+
+  <button onclick="generar()">⚙ Generar Sensibilidad ⚙</button>
+  <div class="frase" id="frase">"Mira el 2, Mira el 4, Todo Rojo 🔴"</div>
+</div>
+
+<div class="zona">
+  <h2>Zona Premium 🔐</h2>
+  <label>Ingresa tu número de Nequi para confirmar pago:</label>
+  <input type="number" id="numero">
+  <button onclick="verificarPago()">Verificar Acceso</button>
+
+  <label>O ingresa tu código privado:</label>
+  <input type="password" id="codigo">
+  <button onclick="verificarAcceso()">Acceder con Código</button>
+  <p id="estado"></p>
+</div>
+
+<img class="oni-mask" src="https://cdn.pixabay.com/photo/2021/02/10/01/08/japanese-5999113_1280.png" alt="Máscara ONI">
+
+  </div>  <script>
+    const FRASES = [
+      'Mira el 2 🔴',
+      'Mira el 4 🔥',
+      'Versión avanzada activada 🧠',
+      'Todo rojo, todo head 💥',
+      'Configuración Pro Free Fire ⚔'
+    ];
+
+    function generar() {
+      const frase = FRASES[Math.floor(Math.random() * FRASES.length)];
+      document.getElementById('frase').innerText = frase;
+    }
+
+    function verificarPago() {
+      const numero = document.getElementById('numero').value;
+      const pagados = ['3502113660']; // aquí irían los números que ya pagaron
+      if (pagados.includes(numero)) {
+        document.getElementById('estado').innerText = '✅ Acceso Premium concedido por pago';
+      } else {
+        document.getElementById('estado').innerText = '❌ Este número no ha realizado el pago.';
+      }
+    }
+
+    function verificarAcceso() {
+      const codigo = document.getElementById('codigo').value;
+      const codigosValidos = ['1970|2009', '2009|1970'];
+      if (codigosValidos.includes(codigo)) {
+        document.getElementById('estado').innerText = '✅ Acceso Premium como creador';
+      } else {
+        document.getElementById('estado').innerText = '❌ Código inválido. No tienes acceso.';
+      }
+    }
+  </script></body>
+</html>
